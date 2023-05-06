@@ -23,28 +23,33 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
-## Setup the Environment
+## What does this project do?
 
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
-```bash
-python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
-```
-* Run `make install` to install the necessary dependencies
+- Run a docker container
+- Upload container into a public registry (hub.docker.com)
+- Run the deployed application in a Kubernetes cluster
+- Integrate with CircleCI for continuous integration
 
-### Running `app.py`
+## Requirements
+ - Python 3.7
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+## START HERE
 
-### Kubernetes Steps
+### Step 0
+- Fork this repo and clone it to your local workstation (obviously)
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+### Step 1: Install dependencies
+- 
+- Set up the environment by running `make setup`. This will create a virtual environment in your home directory called `.devops`
+- Install dependencies by running `make install`
+- (Optionally) Lint application (requires hadolint)
+
+### Step 2: Run Docker container
+- Run the application on docker by calling `./run_docker.sh`
+
+### Step 3: Upload to Docker Hub
+- In the `./upload_docker.sh` file, edit the dockerpath (line 8) and change the docker username to a personalized one (or leave it as is, to use the public trucdp/microproject:v1.0.0)
+- To upload to docker hub, run `./upload_docker.sh`
+
+### Step 4: Kubernetes deployment
+- To deploy to kubernetes, run `./run_kubernetes.sh`
