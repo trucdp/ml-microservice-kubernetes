@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![trucdp](https://circleci.com/gh/kcemenike/operationalize-ml.svg?style=svg)](https://app.circleci.com/pipelines/github/trucdp/ml-microservice-kubernetes)
 
 ## Project Overview
 
